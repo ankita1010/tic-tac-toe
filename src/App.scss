@@ -1,27 +1,92 @@
+$themeColorLight: #fbe8a6;
+$themeColorDark: #f4976c;
+$themeColorDarkBlue: #303c6c;
+$themeColorLightBlue: #85c2c5;
+$themeSecondaryBlue: #b4dfe5;
 body {
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	margin: 0;
+  * {
+    font-family: "Poppins", sans-serif;
+  }
+  margin: 0;
+  background: linear-gradient(170deg, $themeColorLight 50%, $themeColorDark 50%);
+  button {
+	  outline: none;
+  }
 }
-.app-block * {
-	font-weight: 200;
-}
-.app-block h1 {
-	color: white;
-}
-.app-block {
-	width: 100vw;
-	height: 100vh;
-	background: rgb(44, 43, 71);
-	color: lightgray;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-.app-block div {
-	display: flex;
-}
-.app-block img {
-	width: 300px;
-	height: 300px;
+#root {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .main-block {
+    width: 90vw;
+    min-width: 250px;
+    background-color:white;
+	color: $themeColorDarkBlue;
+    min-height: 300px;
+    padding: 20px 0 70px;
+    max-height: 500px;
+    max-width: 500px;
+    border-radius: 10px;
+    // box-shadow: 1px 2px 10px 1px  rgba(252, 134, 0, 0.447);
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-weight: 600;
+    }
+    .theme-btn {
+      background-color: $themeColorLightBlue;
+      border-radius: 10px;
+      border: none;
+      padding: 15px 10px;
+      color: white;
+      width: 80%;
+      margin-top: 30px;
+      font-size: 14px;
+      cursor: pointer;
+	  &:disabled {
+		  opacity: 0.7;
+		  cursor: not-allowed;
+	  }
+    }
+	.icon-btn {
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+	}
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      label {
+        margin: 6% 0 2% 0;
+      }
+      input {
+        border-width: 1px;
+        border-style: solid;
+        border-color: transparent;
+        outline: none;
+        padding: 15px 5px;
+        margin: 2% 0 6% 0;
+        font-size: 16px;
+		color: $themeColorDarkBlue;
+        border-bottom-color: rgba(211, 211, 211, 0.384);
+        transition: all 0.5s;
+        background: transparent;
+        &:focus {
+          border-bottom-color: #91d0f0;
+          &::placeholder {
+            opacity: 0.5;
+            transition: opacity 0.3s;
+          }
+        }
+      }
+    }
+  }
 }
