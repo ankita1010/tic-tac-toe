@@ -28,13 +28,13 @@ export const GameBox = () => {
 								name
 							} = value;
 							return (
-								<h2 key={name} className={isCurrent ? "current-name" : ''}>
+								<h3 key={name} className={isCurrent ? "current-name" : ''}>
 									<i
 										className="fas fa-circle"
 										id={!isCurrent ? 'hidden-icon': ''}
 									/>
 									{name}
-								</h2>
+								</h3>
 							)
 						}
 					)
