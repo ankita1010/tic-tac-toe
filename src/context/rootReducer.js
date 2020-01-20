@@ -2,26 +2,37 @@ import {
 	UPDATE_STATE,
 	UPDATE_PLAYER_NAME,
 	UPDATE_CURRENT_STATE,
-	SWAP_CURRENT_SIDE
+	SWAP_CURRENT_SIDE,
+	UPDATE_SQUARE,
+	HANDLE_WINNER,
+	INIT_STATE,
+	HANDLE_REMATCH,
+	STEP_CHOOSE_SIDE,
+	HANDLE_DRAW
 } from '../constants';
 import {
 	STEP_CHOOSE_PLAYER,
-	STEP_PLAY_GAME,
 	STEP_SHOW_RESULTS
 } from '../constants';
+
 
 export const initialState = {
 	currentStep: STEP_CHOOSE_PLAYER,
 	playerOne: {
-		name: 'one',
-		side: 'o',
-		isCurrent: true
+		name: '',
+		side: 'x',
+		isCurrent: true,
+		isWinner: false
 	},
 	playerTwo: {
-		name: 'two',
-		side: 'x',
-		isCurrent: false
-	}
+		name: '',
+		side: 'o',
+		isCurrent: false,
+		isWinner: false
+	},
+	boxes: new Array(9).fill(''),
+	winningCombo: null,
+	disableAll: false
 };
 
 export const rootReducer = (state, action) => {
@@ -54,11 +65,11 @@ export const rootReducer = (state, action) => {
 		case SWAP_CURRENT_SIDE: {
 			const {
 				playerOne,
-				playerOne: {side: sideOne},
+				playerOne: { side: sideOne },
 				playerTwo,
-				playerTwo: {side: sideTwo}
+				playerTwo: { side: sideTwo }
 			} = state;
-			return({
+			return ({
 				...state,
 				playerOne: {
 					...playerOne,
@@ -70,6 +81,67 @@ export const rootReducer = (state, action) => {
 				}
 			});
 		};
+		case UPDATE_SQUARE: {
+			const { playerOne, playerTwo } = state;
+			const { updatedBoxes: boxes } = action;
+			return ({
+				...state,
+				playerOne: {
+					...playerOne,
+					isCurrent: !playerOne.isCurrent
+				},
+				playerTwo: {
+					...playerTwo,
+					isCurrent: !playerTwo.isCurrent
+				},
+				boxes
+			})
+		};
+		case HANDLE_WINNER: {
+			const { playerOne, playerTwo } = state;
+			const { winner: { combination, side } } = action;
+			return ({
+				...state,
+				playerOne: {
+					...playerOne,
+					isWinner: playerOne.side === side
+				},
+				playerTwo: {
+					...playerTwo,
+					isWinner: playerTwo.side === side
+				},
+				winningCombo: combination,
+				disableAll: true
+			})
+
+		};
+		case HANDLE_REMATCH: {
+			const { playerOne, playerTwo } = state;
+			return ({
+				...state,
+				playerOne: {
+					...playerOne,
+					isWinner: false
+				},
+				playerTwo: {
+					...playerTwo,
+					isWinner: false
+				},
+				currentStep: STEP_CHOOSE_SIDE,
+				winningCombo: null,
+				boxes: new Array(9).fill(''),
+				disableAll: false
+			})
+		};
+		case INIT_STATE: {
+			return initialState;
+		};
+		case HANDLE_DRAW: {
+			return ({
+				...state,
+				currentStep: STEP_SHOW_RESULTS
+			})
+		}
 		default: return state;
 	};
 };

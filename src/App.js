@@ -1,18 +1,17 @@
 import React, { useContext } from 'react';
 import { StoreContext } from './context';
-import { ChoosePlayers, ChooseSides } from './components';
 import {
-	STEP_CHOOSE_PLAYER,
-	STEP_PLAY_GAME,
-	STEP_SHOW_RESULTS,
-	STEP_CHOOSE_SIDE
-} from './constants';
+	ChoosePlayers,
+	ChooseSides,
+	GameBox,
+	Results
+} from './components';
 
 const screens = {
-	STEP_CHOOSE_PLAYER: <ChoosePlayers/>,
-	STEP_CHOOSE_SIDE: <ChooseSides/>,
-	STEP_PLAY_GAME: null,
-	STEP_SHOW_RESULTS: null
+	STEP_CHOOSE_PLAYER: <ChoosePlayers />,
+	STEP_CHOOSE_SIDE: <ChooseSides />,
+	STEP_PLAY_GAME: <GameBox />,
+	STEP_SHOW_RESULTS: <Results/>
 };
 
 import './App.scss';

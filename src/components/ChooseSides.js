@@ -25,11 +25,15 @@ export const ChooseSides = () => {
 		</h4>,
 		<div className="choose-sides-wrapper" key="choose-sides-wrapper">
 			<div className="sides-display">
-				<h1>{'X'}</h1>
+				<h1>
+					<i class="fas fa-times"></i>
+				</h1>
 				<button onClick={swapPlayerSide} className="icon-btn">
 					<i className="fas fa-sync-alt"/>
 			</button>
-				<h1>{'O'}</h1>
+				<h1>
+					<i class="far fa-circle"></i>
+				</h1>
 			</div>
 			<div
 				className="players-wrapper"

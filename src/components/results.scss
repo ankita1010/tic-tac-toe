@@ -1,0 +1,26 @@
+.results-wrapper {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  border-radius: 10px;
+  h2 {
+    padding: 10px;
+    border-radius: 10px;
+	margin-top: 10px;
+    // border: 1px solid #303c6c;
+    font-size: 24px;
+    &.winner-header {
+      border: none;
+      font-size: 250%;
+      background-color: #fbe8a6;
+    }
+  }
+  p {
+    font-size: 18px;
+    margin-bottom: 0;
+    margin-top: 30px;
+  }
+  button {
+    width: 100%;
+  }
+}

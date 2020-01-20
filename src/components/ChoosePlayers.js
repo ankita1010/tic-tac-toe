@@ -15,7 +15,7 @@ export const ChoosePlayers = () => {
 	
 	return [
 		<h4 className="choose-header" key="choose-players-header">
-			Choose Players
+			Choose Players (max 10 characters)
 		</h4>,
 		<section className="form-group" key="player-1">
 			<input

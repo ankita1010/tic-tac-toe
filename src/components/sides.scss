@@ -11,9 +11,15 @@
 		justify-content: space-between;
 		align-items: center;
 		width: 70%;
+		.fa-circle {
+			font-size: 84px;
+		}
 		h1 {
 			font-size: 100px;
 			margin: 10px 0;
+		}
+		h1:last-child {
+			line-height: 70px;
 		}
 		.icon-btn {
 			font-size: 20px;
