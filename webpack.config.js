@@ -17,13 +17,12 @@ const config = function (env) {
 		},
 		output: {
 			path: path.resolve(__dirname, "build"),
-			//saves the output of webpack in the project directory
 			filename: isProduction ? "js/[name].[hash:8].chunk.js" : "js/[name].js"
 		},
 		plugins: [
 			new HtmlWebpackPlugin({
 				template: "./public/index.html",
-				//favicon: './src/hero-image.jpg'  //add your website shortcut icon here
+				favicon: './public/favicon.png' 
 			}),
 			new MiniCssExtractPlugin({
 				filename: "styles/[name].built.css"
