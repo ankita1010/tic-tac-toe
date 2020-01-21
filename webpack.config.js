@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ManifestPlugin = require('webpack-manifest-plugin');
 const manifestJson = require('./public/manifest.json');
-
+const CompressionPlugin = require('compression-webpack-plugin');
 const VENDOR_LIBS = ["react", "react-dom"];
 const config = function (env) {
   	const isProduction = env === 'production';
@@ -29,7 +29,8 @@ const config = function (env) {
 			}),
 			new ManifestPlugin({
 				generate: () => manifestJson
-			})
+			}),
+			new CompressionPlugin()
 		],
 		optimization: {
 			splitChunks: {
