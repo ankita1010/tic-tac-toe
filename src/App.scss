@@ -8,13 +8,33 @@ body {
     font-family: "Poppins", sans-serif;
   }
   margin: 0;
-  background: linear-gradient(170deg, $themeColorLight 50%, $themeColorDark 50%);
+  background: linear-gradient(
+    170deg,
+    $themeColorLight 50%,
+    $themeColorDark 50%
+  );
   button {
-	  outline: none;
+    outline: none;
+  }
+}
+.theme-btn {
+  background-color: $themeColorLightBlue;
+  border-radius: 10px;
+  border: none;
+  padding: 15px 10px;
+  color: white;
+  width: 80%;
+  margin-top: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
   }
 }
 #root {
   height: 100vh;
+  min-height: 600px;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -22,8 +42,8 @@ body {
   .main-block {
     width: 90vw;
     min-width: 250px;
-    background-color:white;
-	color: $themeColorDarkBlue;
+    background-color: white;
+    color: $themeColorDarkBlue;
     min-height: 300px;
     padding: 20px 0 70px;
     max-height: 600px;
@@ -40,26 +60,11 @@ body {
     h4 {
       font-weight: 600;
     }
-    .theme-btn {
-      background-color: $themeColorLightBlue;
-      border-radius: 10px;
+    .icon-btn {
+      background-color: transparent;
       border: none;
-      padding: 15px 10px;
-      color: white;
-      width: 80%;
-      margin-top: 30px;
-      font-size: 14px;
       cursor: pointer;
-	  &:disabled {
-		  opacity: 0.7;
-		  cursor: not-allowed;
-	  }
     }
-	.icon-btn {
-		background-color: transparent;
-		border: none;
-		cursor: pointer;
-	}
     .form-group {
       display: flex;
       flex-direction: column;
@@ -75,7 +80,7 @@ body {
         padding: 15px 5px;
         margin: 2% 0 6% 0;
         font-size: 16px;
-		color: $themeColorDarkBlue;
+        color: $themeColorDarkBlue;
         border-bottom-color: rgba(211, 211, 211, 0.384);
         transition: all 0.5s;
         background: transparent;
