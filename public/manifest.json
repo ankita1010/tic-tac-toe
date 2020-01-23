@@ -1,8 +1,8 @@
 {
-  "name": "tic-tac-toe",
+  "name": "Hash Canvas - A Tic Tac Toe Game Built Using React Js",
   "short_name": "tic-tac-toe",
   "display": "standalone",
-  "start_url": "localhost:8080",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "start_url": "https://hashcanvas.netlify.com",
+  "theme_color": "#f4976c;",
+  "background_color": "#fbe8a6"
 }

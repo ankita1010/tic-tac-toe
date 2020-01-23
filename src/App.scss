@@ -39,6 +39,38 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+	    min-width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span {
+      padding: 5px 10px;
+      &.links {
+        // color: $themeColorDarkBlue;
+        padding-bottom: 2px;
+        font-size: 14px;
+        a {
+          color: inherit;
+          .fa-github,
+          .fa-linkedin {
+            font-size: 16px;
+            margin-right: 10px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    background: #fbe8a65d;
+    font-weight: 800;
+    font-size: 13px;
+	color: #303c6c;
+  }
   .main-block {
     width: 90vw;
     min-width: 250px;
