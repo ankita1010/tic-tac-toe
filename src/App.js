@@ -13,8 +13,6 @@ const screens = {
 	STEP_PLAY_GAME: <GameBox />,
 	STEP_SHOW_RESULTS: <Results />
 };
-import {register} from './serviceWorker';
-
 import './App.scss';
 const App = () => {
 	const { state } = useContext(StoreContext);
@@ -40,4 +38,3 @@ const App = () => {
 	]
 };
 export { App };
-register()
