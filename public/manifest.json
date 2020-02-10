@@ -3,6 +3,7 @@
   "short_name": "tic-tac-toe",
   "display": "standalone",
   "start_url": "https://hashcanvas.netlify.com",
-  "theme_color": "#f4976c;",
-  "background_color": "#fbe8a6"
+  "theme_color": "#f4976c",
+  "background_color": "#fbe8a6",
+  "icon": {"512": "favicon.png"}
 }
