@@ -33,7 +33,7 @@ const App = () => {
 					<i className="fab fa-linkedin"/>
 				</a>
 			</span>
-			<span>Built in &nbsp;<i className="fab fa-react" /></span>
+			<span>Built with &nbsp;<i className="fab fa-react" /></span>
 		</footer>
 	]
 };
